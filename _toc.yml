@@ -5,23 +5,23 @@ parts:
   - caption: Labs
     chapters:
       - file: labs/index
-      - file: labs/Laboratory1_DelaVega
+      - file: labs/LABORATORY_TASK_1
         title: "Laboratory 1"
-      - file: labs/Laboratory2_DelaVega
+      - file: labs/LABORATORY_TASK_2
         title: "Laboratory 2"
-      - file: labs/Laboratory3_DelaVega
+      - file: labs/LABORATORY_TASK_3
         title: "Laboratory 3"
-      - file: labs/Laboratory4_DelaVega
+      - file: labs/LABORATORY_TASK_4
         title: "Laboratory 4"
-      - file: labs/Laboratory5_DelaVega
+      - file: labs/LABORATORY_TASK_5
         title: "Laboratory 5"
-      - file: labs/Laboratory6_DelaVega
+      - file: labs/LABORATORY_TASK_6
         title: "Laboratory 6"
 
   - caption: Exercises
     chapters:
       - file: exercises/index
-      - file: exercises/Exercises1_DelaVega
+      - file: exercises/LECTURE_TASK_1
         title: "Exercises 1"
 
   - caption: Projects
