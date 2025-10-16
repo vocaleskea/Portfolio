@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Labs &#8212; Deep Learning Portfolio</title>
+    <title>LABORATORY TASK 2 &#8212; Deep Learning Portfolio</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'labs/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'labs/LABORATORY_TASK_2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="LABORATORY TASK 1" href="LABORATORY_TASK_1.html" />
-    <link rel="prev" title="Welcome to My Deep Learning Portfolio" href="../intro.html" />
+    <link rel="next" title="LABORATORY TASK 3" href="LABORATORY_TASK_3.html" />
+    <link rel="prev" title="LABORATORY TASK 1" href="LABORATORY_TASK_1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -175,9 +175,9 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Labs</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Labs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Labs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LABORATORY_TASK_1.html">Laboratory 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="LABORATORY_TASK_2.html">Laboratory 2</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Laboratory 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LABORATORY_TASK_3.html">Laboratory 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LABORATORY_TASK_4.html">Laboratory 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="LABORATORY_TASK_5.html">Laboratory 5</a></li>
@@ -245,7 +245,7 @@
       
       
       
-      <li><a href="../_sources/labs/index.md" target="_blank"
+      <li><a href="../_sources/labs/LABORATORY_TASK_2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -255,7 +255,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -316,7 +316,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -327,11 +329,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Labs</h1>
+    <h1>LABORATORY TASK 2</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#result-summary"><strong>Result Summary</strong></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -341,9 +351,118 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="labs">
-<h1>Labs<a class="headerlink" href="#labs" title="Link to this heading">#</a></h1>
-<p>This section contains all lab activities.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="laboratory-task-2">
+<h1><strong>LABORATORY TASK 2</strong><a class="headerlink" href="#laboratory-task-2" title="Link to this heading">#</a></h1>
+<p><strong>Name: Kimberly Vocales</strong></p>
+<p><strong>Section: DS4A</strong></p>
+<p><strong>Instruction:</strong>  Perform a single forward pass and compute for the error.</p>
+<p><strong>We are given:</strong></p>
+<p>[
+x =
+\begin{bmatrix}
+1 \
+0 \
+1
+\end{bmatrix},
+\quad
+y = [1],
+\quad
+f = \max(0, Z_n)
+]</p>
+<p><strong>Hidden Unit Weights:</strong><br />
+[
+\begin{bmatrix}
+w_{11}=0.2 &amp; w_{12}=-0.3 \
+w_{13}=0.4 &amp; w_{14}=0.1 \
+w_{15}=-0.5 &amp; w_{16}=0.2
+\end{bmatrix}
+]</p>
+<p><strong>Output Unit Weights:</strong><br />
+[
+w_{21}=-0.3, \quad w_{22}=-0.2
+]</p>
+<p><strong>Bias (θ):</strong><br />
+[
+\theta_1=-0.4, \quad \theta_2=0.2, \quad \theta_3=0.1
+]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="c1"># Input and target output</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="c1"># Hidden layer weights (3x2)</span>
+<span class="n">W1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">],</span>
+               <span class="p">[</span><span class="mf">0.4</span><span class="p">,</span>  <span class="mf">0.1</span><span class="p">],</span>
+               <span class="p">[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span>  <span class="mf">0.2</span><span class="p">]])</span>
+
+<span class="c1"># Output layer weights (1x2)</span>
+<span class="n">W2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">]])</span>
+
+<span class="c1"># Biases</span>
+<span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">0.4</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute the hidden layer input Z = W1^T * x + theta</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W1</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">theta</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># We&#39;ll use the first two bias terms for hidden units</span>
+
+<span class="c1"># Apply ReLU activation function</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+
+<span class="c1"># Compute the output</span>
+<span class="n">y_hat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">W2</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># Display intermediate results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hidden Layer Input (Z):</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Activated Output (f):</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Predicted Output (y_hat):</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">y_hat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hidden Layer Input (Z):
+ [[-0.7]
+ [ 0.1]]
+
+Activated Output (f):
+ [[0. ]
+ [0.1]]
+
+Predicted Output (y_hat):
+ [[-0.02]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute error</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y_hat</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error (E):&quot;</span><span class="p">,</span> <span class="n">E</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error (E): 0.5202
+</pre></div>
+</div>
+</div>
+</div>
+<section id="result-summary">
+<h2><strong>Result Summary</strong><a class="headerlink" href="#result-summary" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Hidden layer input (Z):</strong> Obtained through matrix multiplication followed by adding the bias term.</p></li>
+<li><p><strong>Activation output (f):</strong> Generated by applying the ReLU activation function to the hidden layer input.</p></li>
+<li><p><strong>Predicted output (ŷ):</strong> Derived using the output layer’s weight calculations.</p></li>
+<li><p><strong>Error (E):</strong> Determined using the formula ( E = \frac{1}{2}(y - \hat{y})^2 ).</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -377,20 +496,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="LABORATORY_TASK_1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to My Deep Learning Portfolio</p>
+        <p class="prev-next-title"><strong>LABORATORY TASK 1</strong></p>
       </div>
     </a>
     <a class="right-next"
-       href="LABORATORY_TASK_1.html"
+       href="LABORATORY_TASK_3.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>LABORATORY TASK 1</strong></p>
+        <p class="prev-next-title"><strong>LABORATORY TASK 3</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -400,6 +519,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#result-summary"><strong>Result Summary</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
